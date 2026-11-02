@@ -1,0 +1,1447 @@
+/* ==================================
+   COULEURS
+================================== */
+
+:root {
+    --fond: #12111A;
+    --fond-secondaire: #191721;
+    --carte: #201D2B;
+
+    --violet: #8B5CF6;
+    --violet-clair: #A78BFA;
+
+    --texte: #F5F3FF;
+    --texte-secondaire: #9D98AC;
+
+    --bordure: #302B3E;
+}
+
+
+/* ==================================
+   BASE
+================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    background-color: var(--fond);
+    color: var(--texte);
+
+    font-family: Arial, sans-serif;
+}
+
+
+/* ==================================
+   BARRE DU HAUT
+================================== */
+
+.topbar {
+    height: 45px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 100;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 25px;
+
+    background-color: var(--fond);
+    border-bottom: 1px solid var(--bordure);
+
+    font-size: 12px;
+    color: var(--texte-secondaire);
+}
+
+.points {
+    display: flex;
+    gap: 7px;
+
+    margin-right: 30px;
+}
+
+.points span {
+    width: 8px;
+    height: 8px;
+
+    background-color: var(--violet);
+
+    border-radius: 50%;
+}
+
+.topbar p {
+    margin: 0;
+}
+
+.heure {
+    margin-left: auto !important;
+}
+
+
+/* ==================================
+   STRUCTURE
+================================== */
+
+.site {
+    display: flex;
+
+    padding-top: 45px;
+}
+
+
+/* ==================================
+   SIDEBAR
+================================== */
+
+.sidebar {
+    position: fixed;
+
+    top: 45px;
+    left: 0;
+    bottom: 40px;
+
+    width: 190px;
+
+    padding: 35px 25px;
+
+    background-color: var(--fond);
+
+    border-right: 1px solid var(--bordure);
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 60px;
+
+    border: 1px solid var(--violet);
+
+    color: var(--violet);
+
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+
+    gap: 28px;
+}
+
+.nav-link {
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+
+    text-decoration: none;
+
+    color: var(--texte-secondaire);
+
+    font-size: 11px;
+
+    transition: 0.3s;
+}
+
+.nav-link span {
+    font-size: 10px;
+
+    color: #575163;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--texte);
+
+    padding-left: 7px;
+}
+
+.nav-link.active span {
+    color: var(--violet);
+}
+
+
+/* ==================================
+   CONTENU PRINCIPAL
+================================== */
+
+main {
+    width: calc(100% - 190px);
+
+    margin-left: 190px;
+
+    padding-bottom: 40px;
+}
+
+.section {
+    min-height: 100vh;
+
+    position: relative;
+
+    padding: 100px 9%;
+
+    border-bottom: 1px solid var(--bordure);
+
+    overflow: hidden;
+}
+
+
+/* ==================================
+   ACCUEIL
+================================== */
+
+.accueil {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.accueil-contenu {
+    position: relative;
+
+    z-index: 2;
+}
+
+.sur-titre {
+    color: var(--violet);
+
+    font-size: 12px;
+    letter-spacing: 3px;
+
+    font-weight: bold;
+}
+
+.accueil h1 {
+    margin: 15px 0;
+
+    font-size: clamp(55px, 8vw, 110px);
+
+    line-height: 0.88;
+
+    letter-spacing: -5px;
+}
+
+.accueil h1 span {
+    color: var(--violet);
+}
+
+.accueil h2 {
+    margin-top: 25px;
+
+    font-weight: normal;
+
+    color: var(--texte-secondaire);
+}
+
+.description {
+    max-width: 520px;
+
+    margin-top: 25px;
+
+    line-height: 1.7;
+
+    color: var(--texte-secondaire);
+}
+
+
+/* ==================================
+   BOUTONS
+================================== */
+
+.boutons {
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 35px;
+}
+
+.btn {
+    padding: 14px 20px;
+
+    background-color: var(--violet);
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    border: 1px solid var(--violet);
+
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--violet-clair);
+
+    transform: translateY(-3px);
+}
+
+.btn-secondaire {
+    background-color: transparent;
+
+    color: var(--violet-clair);
+}
+
+.btn-secondaire:hover {
+    color: white;
+}
+
+
+/* ==================================
+   CARTE BTS
+================================== */
+
+.info-bts {
+    position: relative;
+
+    z-index: 2;
+
+    width: 220px;
+
+    padding: 25px;
+
+    border: 1px solid var(--bordure);
+
+    background-color: rgba(18, 17, 26, 0.8);
+}
+
+.info-bts h3 {
+    margin: 10px 0 5px;
+
+    font-size: 35px;
+}
+
+.info-bts > p:not(.petit) {
+    color: var(--violet-clair);
+}
+
+.petit {
+    font-size: 10px;
+
+    line-height: 1.8;
+
+    letter-spacing: 2px;
+
+    color: var(--texte-secondaire);
+}
+
+.ligne {
+    height: 1px;
+
+    margin: 25px 0;
+
+    background-color: var(--bordure);
+}
+
+
+/* ==================================
+   NUMÉRO EN ARRIÈRE PLAN
+================================== */
+
+.numero-background {
+    position: absolute;
+
+    right: -30px;
+    bottom: -70px;
+
+    font-size: 350px;
+
+    font-weight: bold;
+
+    color: rgba(139, 92, 246, 0.035);
+
+    user-select: none;
+}
+
+
+/* ==================================
+   TITRES DES SECTIONS
+================================== */
+
+.titre-section {
+    display: flex;
+
+    gap: 25px;
+
+    margin-bottom: 70px;
+}
+
+.titre-section > span {
+    color: var(--violet);
+
+    font-size: 12px;
+}
+
+.titre-section p {
+    margin: 0 0 7px;
+
+    color: var(--texte-secondaire);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+.titre-section h2 {
+    margin: 0;
+
+    font-size: 40px;
+
+    letter-spacing: -2px;
+}
+
+
+/* ==================================
+   PROJETS
+================================== */
+
+/* ==================================
+   PROJETS
+================================== */
+
+.projet {
+    border-top: 1px solid var(--bordure);
+
+    transition: 0.3s;
+}
+
+.projet:last-child {
+    border-bottom: 1px solid var(--bordure);
+}
+
+
+/* Partie toujours visible */
+
+.projet-entete {
+    min-height: 130px;
+
+    display: grid;
+
+    grid-template-columns: 80px 1fr 200px 50px;
+
+    align-items: center;
+
+    padding: 20px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.projet-entete:hover {
+    padding-left: 35px;
+
+    background-color: var(--carte);
+}
+
+
+.projet-numero {
+    color: var(--violet);
+
+    font-size: 11px;
+}
+
+
+.projet-nom h3 {
+    margin: 0 0 8px;
+
+    font-size: 26px;
+}
+
+.projet-nom p {
+    margin: 0;
+
+    color: var(--texte-secondaire);
+}
+
+
+.technologies {
+    color: var(--texte-secondaire);
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+}
+
+
+/* Bouton + */
+
+.ouvrir-projet {
+    width: 38px;
+    height: 38px;
+
+    background-color: transparent;
+
+    border: 1px solid var(--bordure);
+
+    color: var(--violet);
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.projet-entete:hover .ouvrir-projet {
+    border-color: var(--violet);
+}
+
+
+/* ==================================
+   CONTENU DÉROULANT
+================================== */
+
+.projet-details {
+    max-height: 0;
+
+    overflow: hidden;
+
+    background-color: var(--fond-secondaire);
+
+    transition: max-height 0.5s ease;
+}
+
+
+.projet-details-contenu {
+    max-width: 750px;
+
+    padding: 35px 80px 45px;
+}
+
+
+.projet-details p {
+    margin-top: 0;
+    margin-bottom: 30px;
+
+    color: var(--texte-secondaire);
+
+    line-height: 1.8;
+}
+
+
+/* Quand le projet est ouvert */
+
+.projet.ouvert .projet-details {
+    max-height: 2000px;
+}
+
+.projet.ouvert .ouvrir-projet {
+    transform: rotate(45deg);
+
+    border-color: var(--violet);
+}
+
+
+/* Bouton lien du projet */
+
+.btn-projet {
+    display: inline-block;
+
+    padding: 12px 18px;
+
+    background-color: var(--violet);
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    transition: 0.3s;
+}
+
+.btn-projet:hover {
+    background-color: var(--violet-clair);
+
+    transform: translateY(-2px);
+}
+
+/* ==================================
+   DOCUMENTS
+================================== */
+
+.liste-documents {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+
+.document {
+    min-height: 300px;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 30px;
+
+    border: 1px solid var(--bordure);
+
+    background-color: var(--fond-secondaire);
+
+    transition: 0.3s;
+}
+
+
+.document:hover {
+    border-color: var(--violet);
+
+    transform: translateY(-5px);
+}
+
+
+.document-numero {
+    margin-bottom: 45px;
+
+    color: var(--violet);
+
+    font-size: 11px;
+}
+
+
+.document-type {
+    margin: 0;
+
+    color: var(--texte-secondaire);
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+
+.document h3 {
+    margin: 10px 0;
+
+    font-size: 28px;
+}
+
+
+.document-contenu > p:last-child {
+    max-width: 400px;
+
+    color: var(--texte-secondaire);
+
+    line-height: 1.6;
+}
+
+
+.document-bouton {
+    margin-top: auto;
+
+    align-self: flex-start;
+
+    padding-bottom: 5px;
+
+    color: var(--texte);
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    border-bottom: 1px solid var(--violet);
+
+    transition: 0.3s;
+}
+
+
+.document-bouton:hover {
+    color: var(--violet);
+}
+/* ==================================
+   PARCOURS
+================================== */
+
+.simple-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.texte-parcours {
+    max-width: 750px;
+
+    font-size: 23px;
+
+    line-height: 1.7;
+
+    color: var(--texte-secondaire);
+}
+
+.texte-parcours p:first-child {
+    color: var(--texte);
+}
+
+
+/* ==================================
+   TIMELINE TP
+================================== */
+
+.timeline {
+    max-width: 850px;
+}
+
+.tp {
+    display: grid;
+
+    grid-template-columns: 120px 40px 1fr;
+
+    min-height: 180px;
+}
+
+.date {
+    padding-top: 5px;
+
+    color: var(--texte-secondaire);
+
+    font-size: 10px;
+}
+
+.point {
+    position: relative;
+}
+
+.point::before {
+    content: "";
+
+    position: absolute;
+
+    top: 5px;
+    left: 10px;
+
+    width: 9px;
+    height: 9px;
+
+    background-color: var(--violet);
+
+    border-radius: 50%;
+}
+
+.point::after {
+    content: "";
+
+    position: absolute;
+
+    top: 14px;
+    bottom: 0;
+    left: 14px;
+
+    width: 1px;
+
+    background-color: var(--bordure);
+}
+
+.tp-contenu {
+    padding-bottom: 50px;
+}
+
+.tp-contenu h3 {
+    margin: 5px 0 10px;
+
+    font-size: 22px;
+}
+
+.tp-contenu > p:last-child {
+    color: var(--texte-secondaire);
+
+    line-height: 1.6;
+}
+
+.tag {
+    margin: 0;
+
+    color: var(--violet);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+
+/* ==================================
+   VEILLE
+================================== */
+
+.veilles {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    min-height: 450px;
+
+    border: 1px solid var(--bordure);
+}
+
+.veille {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 40px;
+
+    text-decoration: none;
+
+    color: var(--texte);
+
+    transition: 0.4s;
+
+    overflow: hidden;
+}
+
+.veille:first-child {
+    border-right: 1px solid var(--bordure);
+}
+
+.veille:hover {
+    background-color: var(--violet);
+}
+
+.veille-numero {
+    font-size: 12px;
+
+    color: var(--texte-secondaire);
+}
+
+.veille p {
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    color: var(--texte-secondaire);
+}
+
+.veille h3 {
+    margin: 5px 0;
+
+    font-size: 42px;
+
+    line-height: 1;
+}
+
+.explorer {
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+
+/* ==================================
+   CONTACT
+================================== */
+
+.contact {
+    min-height: 75vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact h2 {
+    margin: 15px 0;
+
+    font-size: clamp(45px, 7vw, 90px);
+
+    letter-spacing: -4px;
+}
+
+.contact > p:not(.sur-titre) {
+    color: var(--texte-secondaire);
+}
+
+.contact-liens {
+    display: flex;
+
+    gap: 35px;
+
+    margin-top: 40px;
+}
+
+.contact-liens a {
+    color: var(--texte);
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    border-bottom: 1px solid var(--violet);
+
+    padding-bottom: 5px;
+}
+
+.contact-liens a:hover {
+    color: var(--violet);
+}
+
+
+/* ==================================
+   FOOTER
+================================== */
+
+footer {
+    height: 40px;
+
+    position: fixed;
+
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 100;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    background-color: var(--violet);
+
+    color: white;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+
+/* ==================================
+   ANIMATION APPARITION
+================================== */
+
+.section {
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.section.visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* ==================================
+   RESPONSIVE
+================================== */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+        width: 130px;
+    }
+
+    main {
+        width: calc(100% - 130px);
+
+        margin-left: 130px;
+    }
+
+    .sidebar {
+        padding: 30px 15px;
+    }
+
+    .accueil {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+
+        gap: 60px;
+    }
+
+    .info-bts {
+        width: 100%;
+    }
+
+    .projet {
+        grid-template-columns: 50px 1fr 40px;
+    }
+
+    .technologies {
+        display: none;
+    }
+
+    .veilles {
+        grid-template-columns: 1fr;
+    }
+
+    .veille:first-child {
+        border-right: none;
+        border-bottom: 1px solid var(--bordure);
+    }
+
+}
+
+.description-projet h4 {
+    color: var(--violet);
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.description-projet h4:first-child {
+    margin-top: 0;
+}
+
+.description-projet strong {
+    color: var(--texte);
+}
+
+/* ==================================
+   PAGE VEILLE IA
+================================== */
+
+
+/* ==================================
+   INTRODUCTION
+================================== */
+
+.veille-page-intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.veille-retour {
+    margin-bottom: 50px;
+}
+
+
+.veille-retour a {
+    color: var(--texte-secondaire);
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s;
+}
+
+
+.veille-retour a:hover {
+    color: var(--violet);
+}
+
+
+.veille-page-intro h1 {
+    margin: 15px 0;
+
+    font-size: clamp(60px, 8vw, 110px);
+
+    line-height: 0.88;
+
+    letter-spacing: -5px;
+}
+
+
+.veille-page-intro h1 span {
+    color: var(--violet);
+}
+
+
+.veille-page-intro h2 {
+    margin-top: 30px;
+
+    font-size: 24px;
+
+    font-weight: normal;
+
+    color: var(--texte);
+}
+
+
+.veille-page-description {
+    max-width: 650px;
+
+    margin-top: 20px;
+
+    color: var(--texte-secondaire);
+
+    line-height: 1.8;
+}
+
+
+/* Informations sous le titre */
+
+.veille-infos {
+    display: flex;
+
+    gap: 70px;
+
+    margin-top: 60px;
+
+    padding-top: 30px;
+
+    border-top: 1px solid var(--bordure);
+}
+
+
+.veille-infos span {
+    color: var(--violet);
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+
+.veille-infos p {
+    margin: 8px 0 0;
+
+    color: var(--texte-secondaire);
+
+    font-size: 13px;
+}
+
+
+
+/* ==================================
+   STRUCTURE DES SECTIONS
+================================== */
+
+.veille-page-section {
+    display: grid;
+
+    grid-template-columns: 120px 1fr;
+
+    align-content: center;
+}
+
+
+.veille-page-numero {
+    color: var(--violet);
+
+    font-size: 12px;
+
+    padding-top: 5px;
+}
+
+
+.veille-page-contenu {
+    max-width: 950px;
+}
+
+
+.veille-page-contenu > h2 {
+    margin: 10px 0 35px;
+
+    font-size: 42px;
+
+    letter-spacing: -2px;
+}
+
+
+.veille-page-contenu > p {
+    max-width: 750px;
+
+    color: var(--texte-secondaire);
+
+    line-height: 1.8;
+}
+
+
+
+/* ==================================
+   AXES DE VEILLE
+================================== */
+
+.veille-axes {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    margin-top: 50px;
+
+    border: 1px solid var(--bordure);
+}
+
+
+.veille-axe {
+    min-height: 300px;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 30px;
+
+    border-right: 1px solid var(--bordure);
+
+    transition: 0.3s;
+}
+
+
+.veille-axe:last-child {
+    border-right: none;
+}
+
+
+.veille-axe:hover {
+    background-color: var(--carte);
+
+    transform: translateY(-5px);
+}
+
+
+.veille-axe-numero {
+    color: var(--violet);
+
+    font-size: 10px;
+}
+
+
+.veille-axe h3 {
+    margin-top: auto;
+    margin-bottom: 15px;
+
+    font-size: 22px;
+}
+
+
+.veille-axe p {
+    min-height: 65px;
+
+    margin: 0;
+
+    color: var(--texte-secondaire);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+
+/* ==================================
+   ACTUALITÉS
+================================== */
+
+.veille-explication {
+    margin-bottom: 60px;
+}
+
+
+.veille-actualite {
+    display: grid;
+
+    grid-template-columns: 130px 1fr;
+
+    padding: 50px 0;
+
+    border-top: 1px solid var(--bordure);
+}
+
+
+.veille-actualite:last-child {
+    border-bottom: 1px solid var(--bordure);
+}
+
+
+.veille-actualite-date span {
+    color: var(--violet);
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+}
+
+
+.veille-actualite-contenu {
+    max-width: 700px;
+}
+
+
+.veille-tag {
+    display: inline-block;
+
+    padding: 6px 9px;
+
+    border: 1px solid var(--bordure);
+
+    color: var(--violet-clair);
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+}
+
+
+.veille-actualite h3 {
+    margin: 20px 0 15px;
+
+    font-size: 27px;
+}
+
+
+.veille-actualite p {
+    color: var(--texte-secondaire);
+
+    line-height: 1.8;
+}
+
+
+.veille-actualite h4 {
+    margin-top: 35px;
+    margin-bottom: 10px;
+
+    color: var(--violet);
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+
+.veille-source {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding-bottom: 5px;
+
+    color: var(--texte);
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    border-bottom: 1px solid var(--violet);
+
+    transition: 0.3s;
+}
+
+
+.veille-source:hover {
+    color: var(--violet);
+}
+
+
+
+/* ==================================
+   BILAN
+================================== */
+
+.veille-bilan {
+    min-height: 80vh;
+}
+
+
+.veille-navigation {
+    display: flex;
+
+    justify-content: space-between;
+
+    max-width: 750px;
+
+    margin-top: 60px;
+
+    padding-top: 30px;
+
+    border-top: 1px solid var(--bordure);
+}
+
+
+.veille-navigation a {
+    color: var(--texte);
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s;
+}
+
+
+.veille-navigation a:hover {
+    color: var(--violet);
+}
+
+
+
+/* ==================================
+   RESPONSIVE VEILLE
+================================== */
+
+@media (max-width: 900px) {
+
+    .veille-page-section {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+
+    .veille-axes {
+        grid-template-columns: 1fr;
+    }
+
+
+    .veille-axe {
+        min-height: 220px;
+
+        border-right: none;
+
+        border-bottom: 1px solid var(--bordure);
+    }
+
+
+    .veille-axe:last-child {
+        border-bottom: none;
+    }
+
+
+    .veille-actualite {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+
+    .veille-infos {
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+}
